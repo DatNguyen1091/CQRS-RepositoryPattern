@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using WebApp_DAL.Data;
 
-namespace WebApp_DAL.Reposytory
+namespace WebApp_DAL.Repository
 {
     public class CategoeyWithProductRepository
     {

@@ -1,5 +1,5 @@
 ﻿using WebApp_DAL.Models;
-using WebApp_DAL.Reposytory;
+using WebApp_DAL.Repository;
 
 namespace WebApp_BAL.Services
 {

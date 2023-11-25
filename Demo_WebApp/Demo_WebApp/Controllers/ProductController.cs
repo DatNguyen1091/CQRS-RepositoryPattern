@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using WebApp_BAL.Services;
 using WebApp_DAL.Models;
-using WebApp_DAL.Reposytory;
 
 namespace Demo_WebApp.Controllers
 {
@@ -9,6 +8,7 @@ namespace Demo_WebApp.Controllers
     [ApiController]
     public class ProductController
     {
+
         private readonly ProductService _productService;
         public ProductController(ProductService productService)
         {
@@ -40,7 +40,7 @@ namespace Demo_WebApp.Controllers
         }
 
         [HttpDelete("{id}")]
-        public async Task<string> RemoveProduct(int id)
+        public async Task<int> RemoveProduct(int id)
         {
             return await _productService.DeleteProduct(id);
         }

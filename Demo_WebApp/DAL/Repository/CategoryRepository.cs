@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using WebApp_DAL.Data;
 
-namespace WebApp_DAL.Reposytory
+namespace WebApp_DAL.Repository
 {
     public class CategoryRepository : IRepository<Category>
     {   
@@ -27,7 +27,7 @@ namespace WebApp_DAL.Reposytory
             }
         }
 
-        public async Task<string> DeleteAsync(int id)
+        public async Task<int> DeleteAsync(int id)
         {
             try
             {
@@ -36,11 +36,11 @@ namespace WebApp_DAL.Reposytory
                 {
                     _storeContext.Categories.Remove(category);
                     await _storeContext.SaveChangesAsync();
-                    return "True";
+                    return 1;
                 }
                 else
                 {
-                    return "False";
+                    return 0;
                 }
             }
             catch
@@ -66,7 +66,7 @@ namespace WebApp_DAL.Reposytory
         {
             try
             {
-                var category = await _storeContext.Categories!.FirstOrDefaultAsync(x => x.CategoryId == id);
+                var category = await _storeContext.Categories!.Where(x => x.CategoryId == id).FirstOrDefaultAsync();
                 if (category != null)
                 {
                     return category;

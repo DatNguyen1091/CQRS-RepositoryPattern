@@ -1,5 +1,5 @@
 ﻿
-namespace WebApp_DAL.Reposytory
+namespace WebApp_DAL.Repository
 {
     public interface IRepository<otp>
     {
@@ -7,6 +7,6 @@ namespace WebApp_DAL.Reposytory
         public Task<otp> GetIdAsync(int id);
         public Task<otp> AddAsync(otp model);
         public Task<otp> UpdateAsync(int id, otp model);
-        public Task<string> DeleteAsync(int id);
+        public Task<int> DeleteAsync(int id);
     }
 }

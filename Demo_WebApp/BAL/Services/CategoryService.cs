@@ -1,5 +1,5 @@
 ﻿using WebApp_DAL.Models;
-using WebApp_DAL.Reposytory;
+using WebApp_DAL.Repository;
 
 namespace WebApp_BAL.Services
 {
@@ -31,7 +31,7 @@ namespace WebApp_BAL.Services
             return await _categoryRepository.UpdateAsync(id, category);
         }
 
-        public async Task<string> DeleteCategory(int id)
+        public async Task<int> DeleteCategory(int id)
         {
             return await _categoryRepository.DeleteAsync(id);
         }
